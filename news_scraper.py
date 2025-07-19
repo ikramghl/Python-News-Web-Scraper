@@ -15,7 +15,7 @@ def extract_headlines(html):
     headlines = []
 
     # BBC often uses <h3> for headlines
-    for tag in soup.find_all(['h1', 'h2', 'h3']):
+    for tag in soup.find_all(['h2', 'h3']):
         text = tag.get_text(strip=True)
         if text and len(text) > 20:  
     # Filter out empty strings and very short titles (like 'Home' or 'Live') to keep only meaningful, full-length headlines
